@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071a3b">
+  <meta name="description" content="Una pequeña aventura submarina de tulipanes amarillos para Nancy.">
+  <title>Tulipanes para Nancy</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main id="experience" class="experience is-intro" aria-live="polite">
+    <div class="sky" aria-hidden="true"><div class="moon"></div><div class="rays"></div></div>
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <div class="world" aria-hidden="true">
+      <div class="horizon horizon--back" id="horizonBack"></div>
+      <div class="pineapple" id="pineapple">
+        <div class="leaves"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="pineapple-body"><span class="window window--one"></span><span class="window window--two"></span><span class="door"></span></div>
+      </div>
+      <div class="path"></div>
+      <div class="flower-field flower-field--back" id="flowersBack"></div>
+      <div class="flower-field flower-field--front" id="flowersFront"></div>
+      <div class="seabed"></div>
+    </div>
+
+    <section class="intro overlay" id="intro">
+      <p class="eyebrow">Una sorpresa bajo el mar</p>
+      <h1>Nancy...<br><span>Tengo algo muy especial para ti <b>♥</b></span></h1>
+      <button class="primary-button" id="startButton" type="button"><span>Haz clic para comenzar</span><i aria-hidden="true">→</i></button>
+    </section>
+
+    <div class="story-copy" id="storyCopy" aria-live="polite"></div>
+
+    <div class="bob-wrap" id="bob" aria-hidden="true">
+      <svg class="bob" viewBox="0 0 280 390" role="img" aria-label="Personaje de caricatura submarina con un ramo de tulipanes">
+        <defs>
+          <filter id="softShadow"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-opacity=".28"/></filter>
+          <linearGradient id="sponge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff56a"/><stop offset="1" stop-color="#e7bd22"/></linearGradient>
+        </defs>
+        <g class="leg leg--left"><path d="M110 281v55"/><g class="shoe"><path d="M104 331v18h-28c-12 0-13 17 3 18h44v-32z"/></g></g>
+        <g class="leg leg--right"><path d="M170 281v55"/><g class="shoe"><path d="M164 331v18h28c12 0 13 17-3 18h-44v-32z"/></g></g>
+        <g class="body" filter="url(#softShadow)">
+          <path class="pants" d="M61 241h158v50c-25 8-133 8-158 0z"/>
+          <path class="shirt" d="M58 222h164v33H58z"/>
+          <path class="sponge" d="M49 56Q57 39 76 45q19-14 38 0 24-13 42 1 20-11 36 5 27-3 31 21l-3 161q-10 12-28 6-18 13-38 1-18 12-39 0-22 10-38-3-25 4-29-18z"/>
+          <g class="spots"><circle cx="78" cy="84" r="8"/><circle cx="197" cy="104" r="11"/><circle cx="72" cy="196" r="7"/><circle cx="203" cy="207" r="6"/></g>
+          <g class="face"><ellipse cx="107" cy="119" rx="29" ry="36"/><ellipse cx="166" cy="119" rx="29" ry="36"/><circle cx="112" cy="124" r="10"/><circle cx="161" cy="124" r="10"/><circle cx="115" cy="126" r="4"/><circle cx="158" cy="126" r="4"/><path class="nose" d="M138 130q22 13 0 21"/><path class="smile" d="M95 165q43 49 87 0"/><path class="tooth" d="M126 181v19h17v-19M143 181v19h17v-19"/></g>
+          <path class="tie" d="M140 249l-13 13 13 21 13-21z"/>
+        </g>
+        <g class="arm arm--left"><path d="M61 210q-31 25-19 67"/><circle cx="43" cy="276" r="10"/></g>
+        <g class="arm arm--right"><path d="M218 210q31 25 19 67"/><circle cx="236" cy="276" r="10"/></g>
+        <g class="bouquet">
+          <path class="wrap" d="M78 238l124 0-37 98h-48z"/>
+          <g class="stems"><path d="M133 278L99 187M140 276l-9-104M147 278l20-99M151 280l45-83M125 278l-55-74"/></g>
+          <g class="blooms">
+            <g transform="translate(68 188)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
+            <g transform="translate(96 169)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
+            <g transform="translate(127 154)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
+            <g transform="translate(160 164)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
+            <g transform="translate(190 183)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <section class="letter-stage" id="letterStage" aria-hidden="true">
+      <article class="letter">
+        <div class="letter-flower letter-flower--one">🌷</div><div class="letter-flower letter-flower--two">🌷</div>
+        <p>Nancy,</p>
+        <p>Gracias por hacer<br>mis días más bonitos,<br>por tu manera única de ver<br>la vida, por tu sonrisa,<br>por tu compañía y por ser<br>justo esa persona que<br>siempre alegra todo.</p>
+        <p>Que este ramo de tulipanes<br>amarillos te recuerde que<br>siempre pienso en ti y que<br>mereces todas las cosas<br>bonitas del mundo.</p>
+        <p class="letter-signature">Te quiero mucho,<br>mi ojos bonitos. ♥</p>
+      </article>
+    </section>
+
+    <section class="final overlay" id="final" aria-hidden="true">
+      <p>Las personas especiales<br>siempre merecen<br><strong>tulipanes amarillos ♥</strong></p>
+      <button class="primary-button" id="replayButton" type="button"><span>Volver a ver</span><i aria-hidden="true">↻</i></button>
+    </section>
+  </main>
+  <script src="js/animation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
