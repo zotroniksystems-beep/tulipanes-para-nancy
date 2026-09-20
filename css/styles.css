@@ -11,3 +11,46 @@
 @media(max-width:520px){.experience{min-height:0}.bob-wrap{width:37vh;max-width:68vw;bottom:3%}.house{transform:translate(55px,-25px) scale(.92);transform-origin:center}.story-copy{top:max(3%,calc(env(safe-area-inset-top) + 8px))}.flower-field--front .flower:nth-child(n+30){display:none}.delivering .bouquet{transform:translate(-35px,-70px) scale(1.34)}@keyframes breathe{50%{transform:translate(-35px,-76px) scale(1.41)}}.bouquet-prompt{bottom:max(1.5%,env(safe-area-inset-bottom))}}
 @media(max-height:690px){.bob-wrap{width:35vh}.letter{font-size:.75rem;line-height:1.24;padding:27px 35px}.letter p{margin-bottom:.65em}.continue-button{margin-top:10px}.bouquet-prompt{bottom:1%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.2s!important}.particle:nth-child(n+8),.flower:nth-child(n+24){display:none}.bob-wrap.walking{animation-duration:3s!important}}
+
+/* V5 art direction: a low camera, illustrated ground plane, and warm practical light. */
+.experience{min-height:100svh;background:#03142f}
+.ocean{background:linear-gradient(180deg,#020b26 0%,#062d58 38%,#0b5870 59%,#0d5868 100%)}
+.ocean:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 74% 56%,#ffc94d18 0 8%,transparent 27%),linear-gradient(180deg,transparent 48%,#30a49a12 49%,transparent 68%);pointer-events:none}
+.horizon-glow{position:absolute;left:0;right:0;top:42%;height:24%;background:radial-gradient(ellipse at 72% 50%,#ffc04d28,transparent 37%);filter:blur(22px);transition:2.6s var(--ease)}
+.sea-flowers{fill:none;stroke:#48a3bc;stroke-width:5;opacity:.12}
+.distant-ground{fill:#082d4d}.floor{fill:url(#seaFloor);filter:saturate(.86)}
+.road{fill:#728f8b;stroke:#9fb9aa;stroke-width:2}.path-shadow{opacity:.42}
+.stones{opacity:.48}.house{transform:translate(-12px,10px) scale(1.05);transform-origin:75% 54%}
+.house-glow{opacity:.24}.pine-body{stroke-width:10}.pine-texture{opacity:.85}.pine-highlight{opacity:.3}
+.windows .glass,.door-inner{filter:drop-shadow(0 0 10px #ffe879)}
+.flower-field--back{opacity:.7}.flower-field--mid{filter:drop-shadow(0 5px 5px #0018)}
+.flower{transform:rotate(var(--lean))}
+.flower:before{width:10%;height:80%;background:linear-gradient(90deg,#126346,#42a763);box-shadow:none}
+.flower:after{top:-2%;height:40%;background:linear-gradient(110deg,#c98304 0 12%,#ffd42e 34%,#fff49c 58%,#e6a20a 100%);clip-path:polygon(2% 17%,27% 31%,48% 0,70% 31%,98% 14%,89% 75%,73% 98%,25% 98%,9% 73%);filter:drop-shadow(0 4px 2px #50350088)}
+.flower-field--front:after,.flower-field--front:before{content:"";position:absolute;bottom:-3%;width:32%;height:32%;background:linear-gradient(140deg,transparent 20%,#073d3b 21% 32%,transparent 33%) 0 0/45px 90px;opacity:.55;filter:blur(1px)}
+.flower-field--front:before{left:-5%}.flower-field--front:after{right:-5%;transform:scaleX(-1)}
+.bob-wrap{bottom:1.8%;width:clamp(210px,42vh,320px);filter:drop-shadow(5px 0 5px #ffd95b28)}
+.face{transform:translate(7px,7px) scale(.88);transform-origin:175px 168px}.pores{opacity:.55}
+.belt{fill:none;stroke:#39271d;stroke-width:7;stroke-linecap:square}.limb{stroke-width:11}
+.walking .body{animation:body-step .52s ease-in-out infinite alternate}.walking .arm--free{animation:free-arm .52s ease-in-out infinite alternate-reverse}
+.walking .leg--front,.walking .leg--back{animation-duration:.52s}
+@keyframes walk-route{0%{left:-31%;opacity:1;transform:skewY(-1deg) rotateY(-20deg) scale(.88)}15%{left:2%;transform:skewY(-1deg) rotateY(-20deg) scale(.92)}72%{left:39%;transform:rotateY(-15deg) scale(1)}100%{left:48%;opacity:1;transform:translateX(-50%) rotateY(-8deg) scale(1.02)}}
+.bob-wrap.delivering{bottom:1.5%;transform:translateX(-50%) rotateY(0) scale(1.04)}
+.delivering .body{transform:translateX(-4px) rotate(-2deg) scaleX(1.02)}
+.bouquet-button{right:-10%;top:34%;width:54%;height:48%}
+.bouquet-prompt{bottom:max(2.5%,calc(env(safe-area-inset-bottom) + 8px));border:1px solid #efd16966;box-shadow:0 10px 35px #0018;letter-spacing:.04em}
+.letter{border-radius:14px 7px 15px 8px;background:linear-gradient(115deg,#fffdf0,#f7e8bd 55%,#eed49c);box-shadow:0 32px 90px #000d,0 0 70px #f6ca5550,inset 0 0 0 8px #fff8dc,inset 0 0 0 10px #cda750}
+.letter:after{content:"♥";position:absolute;right:24px;bottom:17px;color:#a94842;font-size:1rem}
+.final .primary-button{margin:0 0 max(2vh,env(safe-area-inset-bottom));background:#fff5d9e8;backdrop-filter:blur(8px)}
+.experience.is-sunset .ocean{background:linear-gradient(180deg,#151843 0%,#55295d 34%,#b44e68 53%,#ef8a65 66%,#e8b765 72%,#17717a 73%,#075566 100%)}
+.is-sunset .horizon-glow{top:45%;height:34%;background:radial-gradient(ellipse at 50% 25%,#ffd178aa 0,transparent 52%);filter:blur(28px)}
+.is-sunset .distant-ground{fill:#382649}.is-sunset .city{fill:#241c43;opacity:.9}.is-sunset .floor{fill:#176b6d}
+.is-sunset .house{opacity:.72;transform:translate(75px,3px) scale(.88)}
+.is-sunset .road,.is-sunset .stones,.is-sunset .path-shadow{opacity:0}
+.is-sunset .flower-field--back{filter:brightness(1) saturate(1.25);opacity:.95}.is-sunset .flower-field--mid{filter:brightness(1.06) saturate(1.2)}
+.is-sunset .camera{transform:scale(.94) translateY(-1%)}
+.is-sunset .bob-wrap.final-pose{left:50%!important;bottom:4%!important;width:clamp(195px,36vh,275px);transform:translateX(-50%) scale(.92);z-index:21}
+.is-sunset .bob-wrap.final-pose .bouquet{transform:translate(-14px,-18px) scale(1.04)}
+.is-sunset .bob-wrap.final-pose .arm--holding{transform:translate(-8px,-9px) rotate(-8deg)}
+.is-sunset .flower-field--front{filter:drop-shadow(0 8px 7px #0019) brightness(1.08)}
+@media(max-width:520px){.experience{min-height:100svh}.bob-wrap{width:min(67vw,40vh);bottom:2.5%}.house{transform:translate(72px,-5px) scale(.86)}.is-sunset .house{transform:translate(105px,10px) scale(.78)}.is-sunset .bob-wrap.final-pose{left:46%!important;width:min(60vw,36vh);bottom:5%!important}.final{padding-bottom:max(2.5vh,calc(12px + env(safe-area-inset-bottom)))}.final .primary-button{justify-self:end;margin-right:4vw}.bouquet-prompt{max-width:72%;font-size:.82rem}.story-copy{padding-top:env(safe-area-inset-top)}}

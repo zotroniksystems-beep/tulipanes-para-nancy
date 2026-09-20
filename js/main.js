@@ -9,15 +9,19 @@
     const center = front && y > 18 && y < 47 && x > 31 && x < 69;
     return !(house || path || route || center);
   };
+  const seeded = (() => { let seed=271828; return () => ((seed=Math.imul(seed,1664525)+1013904223>>>0)/4294967296); })();
+  const clusters={back:[8,18,30,44,88,95],mid:[5,18,83,94],front:[4,16,83,94]};
   function buildFlowers(container, count, layer) {
     const fragment=document.createDocumentFragment(); let made=0, attempts=0;
-    while(made<count && attempts++<count*30){
-      const front=layer==='front', x=2+Math.random()*96;
-      const y=front ? -5+Math.random()*32 : layer==='mid' ? 12+Math.random()*35 : 36+Math.random()*25;
+    while(made<count && attempts++<count*40){
+      const front=layer==='front', centers=clusters[layer];
+      const center=centers[Math.floor(seeded()*centers.length)];
+      const x=Math.max(1,Math.min(99,center+(seeded()-.5)*(front?16:layer==='mid'?19:23)));
+      const y=front ? -7+seeded()*27 : layer==='mid' ? 13+seeded()*25 : 37+seeded()*19;
       if(!safe(x,y,front)) continue;
       const flower=document.createElement('i'); flower.className='flower';
-      const size=front?22+Math.random()*22:layer==='mid'?13+Math.random()*13:7+Math.random()*8;
-      flower.style.cssText=`--left:${x}%;--bottom:${y}%;--size:${size}px;--delay:${Math.random()*1.8}s`;
+      const size=front?25+seeded()*26:layer==='mid'?14+seeded()*14:7+seeded()*9;
+      flower.style.cssText=`--left:${x}%;--bottom:${y}%;--size:${size}px;--delay:${seeded()*1.8}s;--lean:${(seeded()-.5)*12}deg`;
       fragment.append(flower); made++;
     }
     container.replaceChildren(fragment);
