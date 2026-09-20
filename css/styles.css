@@ -272,7 +272,6 @@ button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .walking .gift-arm { animation: gift-step .52s ease-in-out infinite alternate; }
 .walking .shoe { animation: shoe-step .52s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
 .walking .leg--back .shoe { animation-direction: alternate-reverse; }
-.walking .blooms > g:nth-child(odd) { animation: nod .7s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: bottom; }
 .bob-wrap.arrived { left: 46%; opacity: 1; transform: translateX(-50%) rotateY(-9deg); }
 .bob-wrap.delivering { z-index: 30; bottom: 1.2%; transform: translateX(-50%) rotateY(0) scale(1.03); }
 .delivering .body { transform: translateX(-3px) rotate(-1.5deg); transition: 1.2s var(--ease); }
@@ -416,4 +415,89 @@ button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .2s !important; }
   .particle:nth-child(n+8), .flower:nth-child(n+24) { display: none; }
   .bob-wrap.walking { animation-duration: 3s !important; }
+}
+
+/* Reference-faithful character articulation: every named group remains independently animatable. */
+#body, #face, #left-arm, #right-arm, #left-leg, #right-leg, #left-shoe, #right-shoe, #bouquet-arm, #bouquet {
+  transform-box: fill-box;
+}
+#body, #face { transform-origin: 50% 100%; }
+#left-arm, #right-arm { transform-origin: 50% 5%; }
+#left-leg, #right-leg { transform-origin: 50% 4%; }
+#left-shoe, #right-shoe { transform-origin: 50% 50%; }
+#bouquet-arm { transform-origin: 12% 48%; }
+#bouquet { transform-origin: 45% 88%; }
+.freckles { fill: #b96d32; }
+.tulip-head { fill: #ffe13e; stroke: #d39408; stroke-width: 3; filter: drop-shadow(0 3px 2px #76500077); }
+.walking #body, .walking #face { animation: body-step .54s cubic-bezier(.45,0,.55,1) infinite alternate; }
+.walking #left-leg { animation: leg-step .54s cubic-bezier(.45,0,.55,1) infinite alternate; }
+.walking #right-leg { animation: leg-step .54s cubic-bezier(.45,0,.55,1) infinite alternate-reverse; }
+.walking #left-arm { animation: free-arm .54s cubic-bezier(.45,0,.55,1) infinite alternate-reverse; }
+.walking #right-arm { animation: free-arm .54s cubic-bezier(.45,0,.55,1) infinite alternate; }
+.walking #bouquet-arm { animation: bouquet-carry .54s cubic-bezier(.45,0,.55,1) infinite alternate; }
+.walking #left-shoe { animation: left-shoe-step .54s cubic-bezier(.45,0,.55,1) infinite alternate; }
+.walking #right-shoe { animation: right-shoe-step .54s cubic-bezier(.45,0,.55,1) infinite alternate; }
+.delivering #bouquet-arm { transform: translate(-19px,-29px) rotate(-8deg) scale(1.08); transition: 1.25s var(--ease); }
+.bob-wrap.interactive #bouquet-arm { animation: bouquet-breathe 2.3s ease-in-out infinite; filter: drop-shadow(0 0 11px #ffe75a); }
+.bob-wrap.bouquet-tapped #bouquet-arm { animation: bouquet-tap .55s var(--ease); }
+.is-sunset .bob-wrap.final-pose #bouquet-arm { transform: translate(-5px,-7px) rotate(-3deg); }
+
+/* The ending remains a quiet scene: a small glass panel, exactly two actions, and no sun disk. */
+.final { place-content: center; padding: 24px; }
+.final-menu {
+  display: grid;
+  width: min(88vw, 390px);
+  gap: 12px;
+  padding: 25px 22px 22px;
+  border: 1px solid #ffe6ad88;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #111630cc, #371c39b8);
+  box-shadow: 0 24px 70px #10091eaa, inset 0 1px #fff3;
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(16px) scale(.97);
+  transition: .7s var(--ease);
+}
+.final.ready .final-menu { opacity: 1; transform: none; }
+.final-kicker { margin: 0; color: #ffe697; font: 700 .72rem/1.2 Georgia, serif; letter-spacing: .18em; text-transform: uppercase; }
+.final-kicker span { color: #ffc3b2; }
+.final-menu h2 { margin: 0 0 8px; color: #fff8df; font: italic 700 1.65rem/1.15 Georgia, serif; text-shadow: 0 3px 14px #0008; }
+.final-menu .replay-button, .exit-button { width: 100%; min-height: 48px; opacity: 1; transform: none; }
+.exit-button { border: 1px solid #ffe8b077; border-radius: 999px; background: #071a2ea8; color: #fff3d1; font-weight: 700; cursor: pointer; transition: .25s; }
+.exit-button:hover { transform: translateY(-2px); background: #102b44cc; }
+.final.is-exiting { opacity: 0; visibility: hidden; pointer-events: none; }
+.farewell {
+  position: absolute;
+  z-index: 45;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 1.4s var(--ease), visibility 1.4s;
+}
+.farewell.show { opacity: 1; visibility: visible; }
+.farewell p { margin: 0; padding: 24px 27px; border: 1px solid #ffe2ab55; border-radius: 22px; background: #0815289e; box-shadow: 0 20px 60px #170e2d88; color: #fff7e7; backdrop-filter: blur(9px); font: italic 700 clamp(1.35rem, 6vw, 2rem)/1.45 Georgia, serif; text-shadow: 0 3px 14px #0008; }
+.farewell span { color: #ffd45f; }
+.experience.has-farewell .bob-wrap { opacity: 0 !important; transition: opacity 1.1s ease; }
+
+@keyframes bouquet-carry { to { transform: translateY(-4px) rotate(2deg); } }
+@keyframes left-shoe-step { from { transform: translate(-8px,-1px) rotate(-10deg); } to { transform: translate(9px,2px) rotate(12deg); } }
+@keyframes right-shoe-step { from { transform: translate(9px,2px) rotate(12deg); } to { transform: translate(-8px,-1px) rotate(-10deg); } }
+@keyframes bouquet-breathe { 50% { transform: translate(-19px,-34px) rotate(-6deg) scale(1.1); } }
+@keyframes bouquet-tap { 45% { transform: translate(-19px,-40px) rotate(-5deg) scale(1.16); } 100% { transform: translate(-19px,-29px) rotate(-8deg) scale(1.08); } }
+
+@media (max-width: 520px) {
+  .bob-wrap { width: min(61vw, 39vh); bottom: 1.5%; }
+  .final { padding: max(18px, env(safe-area-inset-top)) 18px max(18px, env(safe-area-inset-bottom)); }
+  .is-sunset .bob-wrap.final-pose { left: 72% !important; width: min(49vw, 34vh); bottom: 3% !important; }
+  .final-menu { width: min(86vw, 360px); margin-right: 5%; }
+}
+@media (max-height: 700px) {
+  .bob-wrap { width: min(55vw, 35vh); }
+  .final-menu { padding: 18px; gap: 9px; }
+  .final-menu h2 { font-size: 1.35rem; }
 }
