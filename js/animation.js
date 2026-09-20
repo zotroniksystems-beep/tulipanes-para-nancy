@@ -41,7 +41,7 @@
       const id = this.runId; this.n.continue.disabled = true;
       this.n.letter.classList.remove('show'); this.n.letter.setAttribute('aria-hidden','true'); await wait(900);
       if (id !== this.runId) return; this.n.root.classList.add('is-sunset');
-      this.n.bob.className = 'bob-wrap arrived'; this.n.bob.style.transform = 'translateX(-50%) scale(.62)';
+      this.n.bob.className = 'bob-wrap arrived'; this.n.bob.style.transform = 'translateX(-50%) scale(.78)';
       await wait(1500); if (id !== this.runId) return;
       this.n.final.setAttribute('aria-hidden','false'); this.n.final.classList.add('show'); await wait(1000);
       this.n.replay.classList.add('ready'); this.n.replay.focus({preventScroll:true});

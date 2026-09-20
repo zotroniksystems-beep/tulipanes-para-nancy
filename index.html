@@ -3,96 +3,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#071a3b">
-  <meta name="description" content="Una pequeña aventura submarina de tulipanes amarillos para Nancy.">
+  <meta name="theme-color" content="#061c46">
+  <meta name="description" content="Una aventura submarina de tulipanes amarillos para Nancy.">
   <title>Tulipanes para Nancy</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <main id="experience" class="experience is-intro" aria-live="polite">
-    <div class="sky" aria-hidden="true"><div class="moon"></div><div class="rays"></div><div class="caustics"></div></div>
-    <div class="particles" id="particles" aria-hidden="true"></div>
+<main id="experience" class="experience" aria-live="polite">
+  <div class="ocean" aria-hidden="true"><div class="caustics"></div><div class="moon"></div><div class="particles" id="particles"></div></div>
+  <div class="camera" id="horizonBack" aria-hidden="true">
+    <svg class="scenery" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="seaFloor" x2="0" y2="1"><stop stop-color="#187d8c"/><stop offset="1" stop-color="#06415d"/></linearGradient>
+        <linearGradient id="road" x2=".75" y2="1"><stop stop-color="#8fb3ab"/><stop offset="1" stop-color="#455e67"/></linearGradient>
+        <radialGradient id="pine" cx="30%" cy="18%"><stop stop-color="#ffd75a"/><stop offset=".48" stop-color="#e99025"/><stop offset="1" stop-color="#a5481c"/></radialGradient>
+        <radialGradient id="glass"><stop stop-color="#dcffff"/><stop offset=".35" stop-color="#58cce2"/><stop offset="1" stop-color="#17627e"/></radialGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="13"/></filter>
+        <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#001128" flood-opacity=".7"/></filter>
+        <pattern id="diamonds" width="45" height="45" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V45M22.5 0V45" stroke="#713712" stroke-width="4" opacity=".38"/></pattern>
+      </defs>
+      <path class="distant-ground" d="M-40 505Q160 430 350 480T720 463T1050 500V690H-40Z"/>
+      <g class="city">
+        <path d="M24 493v-86q0-28 20-28t20 28v86M92 493v-49q0-24 18-24t18 24v49M202 493v-105q0-31 22-31t22 31v105M710 493v-75q0-27 20-27t20 27v75M844 493v-122q0-33 23-33t23 33v122M934 493v-62q0-25 19-25t19 25v62"/>
+        <g class="city-lights"><path d="M36 408h16m-16 25h16m170-47h15m-15 28h15m483 6h20m105-47h18m-18 29h18m-18 29h18"/></g>
+      </g>
+      <path class="floor" d="M-40 545Q220 490 520 525T1040 545V1040H-40Z"/>
+      <g class="path-shadow"><path d="M678 568C601 623 632 679 548 732 456 790 349 845 267 1040H826C769 858 655 806 649 742c-6-61 101-99 100-174Z"/></g>
+      <path class="road" d="M690 566C616 629 650 678 561 740 462 807 386 858 316 1040H781C722 865 625 807 621 745c-4-65 96-112 111-179Z"/>
+      <g class="stones">
+        <path d="M675 608q24-17 48-3l-9 22-48 5-13-11Z"/><path d="M638 659q29-21 57-5l-8 25-59 9-17-13Z"/><path d="M583 720q34-23 66-4l-10 30-69 10-18-16Z"/><path d="M507 793q45-25 89-2l-13 37-92 13-25-20Z"/><path d="M409 886q62-32 122-1l-18 48-128 18-32-25Z"/><path d="M596 861q46-20 87 9l-13 37-91 2-19-27Z"/><path d="M533 671q25-16 49-1l-9 23-48 5-12-11Z"/>
+      </g>
+      <g class="house" id="pineapple" filter="url(#shadow)">
+        <ellipse class="house-glow" cx="739" cy="451" rx="145" ry="125"/>
+        <g class="crown rear"><path d="M712 315Q627 232 656 205q50 24 85 98Q716 180 751 164q33 59 21 139 29-113 71-108 21 46-48 126 69-76 100-46-27 61-106 92Z"/></g>
+        <path class="pine-body" d="M639 335Q660 285 724 278q83-10 127 51 30 42 36 138 6 101-36 133-48 37-135 20-78-16-91-75-13-62 14-210Z"/>
+        <path class="pine-texture" d="M639 335Q660 285 724 278q83-10 127 51 30 42 36 138 6 101-36 133-48 37-135 20-78-16-91-75-13-62 14-210Z"/>
+        <path class="pine-highlight" d="M673 340q23-39 54-35-45 135-35 252-40-56-19-217Z"/>
+        <g class="windows"><circle cx="690" cy="403" r="31"/><circle cx="819" cy="389" r="31"/><circle class="glass" cx="690" cy="403" r="21"/><circle class="glass" cx="819" cy="389" r="21"/></g>
+        <g class="door"><path d="M735 618v-98q0-55 44-55t44 55v98Z"/><path class="door-inner" d="M750 617v-94q0-38 29-38t29 38v94Z"/><circle cx="795" cy="550" r="6"/><path d="M722 617q58-17 116 0l-5 18H725Z"/></g>
+        <g class="crown front"><path d="M704 322q-49-123-10-137 44 43 57 119-1-136 42-140 26 66-6 148 47-111 84-88 8 56-74 124Z"/></g>
+        <g class="house-plants"><path d="M614 610q-25-75-49-41 4 45 47 68m257-19q30-69 53-32-9 43-51 62"/></g>
+      </g>
+    </svg>
+    <div class="flower-field flower-field--back" id="flowersBack"></div>
+    <div class="flower-field flower-field--mid" id="flowersMid"></div>
+  </div>
+  <div class="flower-field flower-field--front" id="flowersFront" aria-hidden="true"></div>
 
-    <div class="world" aria-hidden="true">
-      <div class="horizon horizon--back" id="horizonBack"></div>
-      <div class="city-depth"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="reef reef--left"><i></i><i></i><i></i></div><div class="reef reef--right"><i></i><i></i><i></i></div>
-      <div class="pineapple" id="pineapple">
-        <div class="leaves"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="leaves leaves--rear"><i></i><i></i><i></i></div>
-        <div class="pineapple-body"><span class="pineapple-shine"></span><span class="window window--one"></span><span class="window window--two"></span><span class="door"></span><span class="door-step"></span></div>
-      </div>
-      <div class="path"><i></i><i></i><i></i></div>
-      <div class="flower-field flower-field--back" id="flowersBack"></div>
-      <div class="flower-field flower-field--front" id="flowersFront"></div>
-      <div class="foreground-fronds"><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="seabed"></div>
-    </div>
+  <section class="intro overlay" id="intro">
+    <div class="intro-card"><p>Una sorpresa bajo el mar</p><h1>Nancy...</h1><h2>Tengo algo muy especial para ti <b>♥</b></h2></div>
+    <button class="primary-button" id="startButton" type="button">Haz clic para comenzar <i>→</i></button>
+  </section>
+  <div class="story-copy" id="storyCopy" aria-live="polite"></div>
 
-    <section class="intro overlay" id="intro">
-      <p class="eyebrow">Una sorpresa bajo el mar</p>
-      <h1>Nancy...<br><span>Tengo algo muy especial para ti <b>♥</b></span></h1>
-      <button class="primary-button" id="startButton" type="button"><span>Haz clic para comenzar</span><i aria-hidden="true">→</i></button>
-    </section>
+  <div class="bob-wrap" id="bob">
+    <svg class="bob" viewBox="0 0 360 560" role="img" aria-label="Bob Esponja camina de cuerpo completo con un ramo de tulipanes en una mano">
+      <defs><linearGradient id="sponge" x2="1" y2="1"><stop stop-color="#fff681"/><stop offset=".55" stop-color="#f7d72f"/><stop offset="1" stop-color="#cf9b13"/></linearGradient><linearGradient id="wrap" x2="1" y2="1"><stop stop-color="#fff0bd"/><stop offset="1" stop-color="#d89368"/></linearGradient><filter id="bobShadow"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-opacity=".35"/></filter></defs>
+      <ellipse class="bob-shadow" cx="178" cy="535" rx="105" ry="15"/>
+      <g class="leg leg--back"><path class="limb" d="M196 411q12 47-2 79"/><path class="sock" d="M181 469l30 3-3 31-31-4Z"/><path class="stripes" d="M181 479l29 3m-30 8 29 3"/><g class="shoe"><path d="M194 497q20 3 34 18 22 20-1 27-23 5-61-10l11-35Z"/><path d="M184 515q22 4 37 17"/></g></g>
+      <g class="leg leg--front"><path class="limb" d="M119 406q-16 43-8 82"/><path class="sock" d="M96 466l31-1 2 33-32 1Z"/><path class="stripes" d="M98 476l29-1m-29 10 30-1"/><g class="shoe"><path d="M112 493q-14 8-35 11-31 4-28 25 7 20 63 7l18-8-2-34Z"/><path d="M61 520q24-8 45-6"/></g></g>
+      <g class="body" filter="url(#bobShadow)">
+        <path class="pants" d="M63 359q75 17 171-5l18 59q-34 24-72 7-41 15-84-1l-32 5q-11-31-1-65Z"/><path class="shirt" d="M55 324q93 20 199-4l-2 48q-98 32-190 2Z"/>
+        <path class="sponge" d="M62 80q13-34 45-20 24-25 55-4 29-21 54 2 40-10 49 27 27 12 14 44 16 24-1 48 14 30-8 53 11 35-17 50 0 35-33 39-25 20-53 5-28 17-56-3-39 5-43-32-30-15-13-47-16-27 3-50-14-28 8-49-9-33 11-63Z"/>
+        <g class="pores"><ellipse cx="92" cy="100" rx="12" ry="8"/><circle cx="239" cy="111" r="12"/><ellipse cx="85" cy="248" rx="9" ry="14"/><circle cx="234" cy="271" r="8"/><circle cx="113" cy="292" r="6"/></g>
+        <g class="face"><ellipse class="eye" cx="139" cy="151" rx="43" ry="50" transform="rotate(-5 139 151)"/><ellipse class="eye" cx="208" cy="143" rx="38" ry="47" transform="rotate(8 208 143)"/><circle class="iris" cx="151" cy="157" r="14"/><circle class="iris" cx="211" cy="149" r="13"/><circle class="pupil" cx="154" cy="159" r="7"/><circle class="pupil" cx="214" cy="151" r="7"/><path class="lashes" d="M110 107l-8-15m25 10-2-18m106 18 9-15m-25 11 3-17"/><path class="nose" d="M178 150q49 5 35 33-12 16-38 3"/><path class="cheeks" d="M103 197q12-10 25 2m92-6q13-8 25 3"/><path class="smile" d="M112 201q56 67 126-8"/><path class="mouth" d="M132 220q44 29 83-3-9 50-43 51-32 1-40-48Z"/><path class="tongue" d="M151 257q22-17 43-2"/><path class="teeth" d="M145 218v27h23v-24m1 0v24h23v-28"/></g>
+        <path class="collar" d="M105 340l35 32-34 10m105-48-34 36 32 8"/><path class="tie" d="M159 362l18-2 13 17-15 16-18-15Zm8 29 17-1 6 28-19 16-14-17Z"/>
+      </g>
+      <g class="arm arm--free"><path class="limb" d="M68 327q-48 11-57 63"/><path class="hand" d="M8 380q-13 8-4 20 7 8 16 0 0 15 11 13 10-3 4-15 12 7 17-2 3-11-14-17-17-7-30 1Z"/><path class="fingers" d="M12 383l-10-7m23 5 1-14m9 18 11-9"/></g>
+      <g class="arm arm--holding"><path class="limb" d="M245 328q42 23 42 73"/><path class="hand" d="M272 391q-12 13-2 26 12 12 26-2l3-21q-13-12-27-3Z"/></g>
+      <g class="bouquet" id="bouquetArt">
+        <g class="stems"><path d="M285 412l-57-118m58 118-30-139m35 139 6-148m-3 148 42-133m-37 136 68-111m-73 106-4-125m10 126 31-142m-36 145 62-74m-69 75-61-100"/><path class="leaf" d="M276 363q-42-47-53-16 19 35 57 37m20-39q44-50 55-17-20 36-58 39"/></g>
+        <g class="blooms"><g transform="translate(214 287) rotate(-20)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(245 261) rotate(-12)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(286 250)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(326 267) rotate(13)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(349 295) rotate(21)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(234 312) rotate(-14)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(275 298)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(314 309) rotate(10)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(342 330) rotate(18)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g></g>
+        <path class="paper back" d="M218 331l74 56 78-57-44 137-55-2Z"/><path class="paper front" d="M222 350l70 38 75-37-43 116-54-2Z"/><path class="ribbon" d="M269 421q-34-22-35 10 9 23 42 8m48-18q36-20 34 12-11 21-42 6m-22-15-15 38 17-9 17 11-9-39Z"/>
+      </g>
+    </svg>
+    <button class="bouquet-button" id="bouquetButton" type="button" aria-label="Toca el ramo para descubrir la sorpresa" disabled></button>
+  </div>
+  <div class="bouquet-prompt" id="bouquetPrompt" aria-hidden="true"><strong>Toca el ramo 🌷</strong><span>Tengo una sorpresa para ti...</span></div>
+  <div class="magic-particles" id="magicParticles" aria-hidden="true"></div>
 
-    <div class="story-copy" id="storyCopy" aria-live="polite"></div>
-
-    <div class="bob-wrap" id="bob">
-      <svg class="bob" viewBox="0 0 300 410" role="img" aria-label="Bob Esponja trae un ramo de tulipanes amarillos">
-        <defs>
-          <filter id="softShadow"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-opacity=".28"/></filter>
-          <linearGradient id="sponge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff87a"/><stop offset=".6" stop-color="#f5db32"/><stop offset="1" stop-color="#dbaa18"/></linearGradient>
-          <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4c9"/><stop offset="1" stop-color="#eab58b"/></linearGradient>
-        </defs>
-        <ellipse class="bob-shadow" cx="150" cy="391" rx="87" ry="13"/>
-        <g class="leg leg--left"><path class="limb" d="M111 300v52"/><path class="sock" d="M98 329h25v28H98z"/><path class="sock-stripe red" d="M99 335h23"/><path class="sock-stripe blue" d="M99 342h23"/><path class="shoe" d="M110 350q-3 13-17 16l-25 5q-12 5-5 16 5 7 24 5l36-6 2-27z"/><path class="shoe-shine" d="M71 377q17-7 30-6"/></g>
-        <g class="leg leg--right"><path class="limb" d="M189 300v52"/><path class="sock" d="M177 329h25v28h-25z"/><path class="sock-stripe red" d="M178 335h23"/><path class="sock-stripe blue" d="M178 342h23"/><path class="shoe" d="M190 350q3 13 17 16l25 5q12 5 5 16-5 7-24 5l-36-6-2-27z"/><path class="shoe-shine" d="M229 377q-17-7-30-6"/></g>
-        <g class="body" filter="url(#softShadow)">
-          <path class="pants" d="M54 251q48 6 96 2t96-2v53q-20 8-42 1l-12 9-42-5-42 5-12-9q-22 7-42-1z"/>
-          <path class="belt" d="M59 274h182"/><path class="belt-loop" d="M77 266v17m46-14v18m54-18v18m46-21v17"/>
-          <path class="shirt" d="M51 224q49 8 99 4t99-4v40q-52 13-99 5-49 8-99-5z"/>
-          <path class="collar" d="M105 234l30 26-28 9m88-35-30 26 28 9"/>
-          <path class="sponge" d="M43 61q8-23 31-15 17-18 39-3 22-15 42 0 22-15 41 1 29-8 37 17 21 7 13 31 12 20-2 38 13 22-1 40 11 25-6 41 3 24-20 28-14 18-37 7-20 14-40 1-22 13-43 0-21 12-39-2-24 8-35-13-24 0-22-24-14-19-2-39-12-21 1-41-10-22 4-40-8-25 16-38z"/>
-          <g class="spots"><ellipse cx="70" cy="86" rx="10" ry="7"/><circle cx="218" cy="94" r="11"/><ellipse cx="68" cy="190" rx="8" ry="12"/><circle cx="222" cy="205" r="7"/><circle cx="91" cy="218" r="5"/><ellipse cx="198" cy="61" rx="6" ry="9"/></g>
-          <g class="pores"><path d="M61 116q10-8 18 1M215 137q11-8 19 2M71 211q8-5 14 2M207 181q7-5 13 1"/><circle cx="83" cy="69" r="3"/><circle cx="226" cy="116" r="3"/><circle cx="54" cy="160" r="3"/></g>
-          <g class="face"><ellipse cx="113" cy="125" rx="35" ry="42"/><ellipse cx="177" cy="125" rx="35" ry="42"/><path class="lashes" d="M92 84l-7-11m22 7-2-14m92 18 7-11m-22 7 2-14"/><circle class="iris" cx="119" cy="130" r="12"/><circle class="iris" cx="171" cy="130" r="12"/><circle class="pupil" cx="121" cy="132" r="6"/><circle class="pupil" cx="169" cy="132" r="6"/><circle class="glint" cx="123" cy="129" r="2"/><circle class="glint" cx="171" cy="129" r="2"/><path class="nose" d="M146 126q29 14 3 28"/><path class="cheek" d="M79 166q9-8 19 0m94 0q9-8 19 0"/><path class="freckles" d="M82 159l1 0m8-3 1 0m108 3 1 0m8-3 1 0"/><path class="smile" d="M91 169q55 65 111-1"/><path class="mouth" d="M111 187q37 28 72 0-7 39-36 39-29 0-36-39"/><path class="tongue" d="M128 216q20-13 39 0"/><path class="tooth" d="M126 185v23h20v-20m1 0v20h20v-23"/></g>
-          <path class="tie-knot" d="M150 254l-14 12 14 12 14-12z"/><path class="tie" d="M150 274l-15 26 15 12 15-12z"/>
-        </g>
-        <g class="arm arm--left arm--free"><path class="limb" d="M59 214q-30 20-27 58"/><path class="hand" d="M24 270q-5 8 1 14 5 5 11 0 2 11 10 8 7-3 2-12 9 5 12-2 2-8-12-13-15-5-24 5z"/><path class="finger" d="M29 270l-8-5m17 3 1-10m8 13 8-6"/></g>
-        <g class="arm arm--right arm--holding"><path class="limb" d="M239 215q27 17 18 48-4 14-21 27"/><path class="hand" d="M226 281q-5 12 6 18 12 5 20-8l-1-18q-13-4-25 8z"/><path class="finger" d="M231 285q9 8 20 2m-17 5q8 7 15 3"/></g>
-        <g class="bouquet" id="bouquetArt">
-          <path class="wrap wrap-back" d="M58 227l91-35 94 36-65 113h-57z"/>
-          <g class="stems"><path d="M144 292L73 196M146 294l-44-118m49 116-18-132m21 134 18-131m-14 131 49-115m-44 119 72-95M139 292l-59-73m82 75 60-72M150 293l1-122"/><path class="leaves" d="M121 250q-32-36-39-10 17 24 43 25m53-13q30-38 39-12-15 25-42 27m-31-25q-31-37-38-13 14 25 40 29m12-20q29-36 38-12-15 25-38 28"/></g>
-          <g class="blooms">
-            <g transform="translate(64 187)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(91 169)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(122 153)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(151 164)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(183 160)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(211 181)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(78 213)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(137 199)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(193 211)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g>
-          </g>
-          <path class="wrap wrap-front" d="M61 226l88 34 91-33-62 114h-57z"/><path class="ribbon" d="M122 307q-28-20-28 7 5 20 35 7m48-14q28-20 28 7-5 20-35 7m-20-12-13 29 13-8 14 8-11-29z"/>
-        </g>
-      </svg>
-      <button class="bouquet-button" id="bouquetButton" type="button" aria-label="Toca el ramo para descubrir la sorpresa" disabled></button>
-    </div>
-    <div class="bouquet-prompt" id="bouquetPrompt" aria-hidden="true"><strong>Toca el ramo 🌷</strong><span>Tengo una sorpresa para ti...</span></div>
-    <div class="magic-particles" id="magicParticles" aria-hidden="true"></div>
-
-    <section class="letter-stage" id="letterStage" aria-hidden="true">
-      <article class="letter" role="dialog" aria-modal="true" aria-labelledby="letterTitle" tabindex="-1">
-        <span class="corner-tulip corner-tulip--one" aria-hidden="true">🌷</span><span class="corner-tulip corner-tulip--two" aria-hidden="true">🌷</span>
-        <div class="letter-content">
-        <p id="letterTitle">Nancy,</p>
-        <p>Gracias por hacer<br>mis días más bonitos,<br>por tu manera única de ver<br>la vida, por tu sonrisa,<br>por tu compañía y por ser<br>justo esa persona que<br>siempre alegra todo.</p>
-        <p>Que este ramo de tulipanes<br>amarillos te recuerde que<br>siempre pienso en ti y que<br>mereces todas las cosas<br>bonitas del mundo.</p>
-        <p class="letter-signature">Te quiero mucho,<br>mi ojos bonitos. ♥</p>
-        <button class="continue-button" id="continueButton" type="button">Continuar <span aria-hidden="true">♥</span></button>
-        </div>
-      </article>
-    </section>
-
-    <section class="final overlay" id="final" aria-hidden="true">
-      <div class="sunset-glow" aria-hidden="true"></div>
-      <button class="primary-button" id="replayButton" type="button"><span>Volver a ver</span><i aria-hidden="true">↻</i></button>
-    </section>
-  </main>
-  <script src="js/animation.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+  <section class="letter-stage" id="letterStage" aria-hidden="true"><article class="letter" role="dialog" aria-modal="true" aria-labelledby="letterTitle" tabindex="-1"><div class="paper-fold"></div><span class="corner-tulip one">🌷</span><span class="corner-tulip two">🌷</span><div class="letter-content"><p id="letterTitle">Nancy,</p><p>Gracias por hacer<br>mis días más bonitos,<br>por tu manera única de ver<br>la vida, por tu sonrisa,<br>por tu compañía y por ser<br>justo esa persona que<br>siempre alegra todo.</p><p>Que este ramo de tulipanes<br>amarillos te recuerde que<br>siempre pienso en ti y que<br>mereces todas las cosas<br>bonitas del mundo.</p><p class="letter-signature">Te quiero mucho,<br>mi ojos bonitos. ♥</p><button class="continue-button" id="continueButton" type="button">Continuar ♥</button></div></article></section>
+  <section class="final overlay" id="final" aria-hidden="true"><button class="primary-button" id="replayButton" type="button">Volver a ver <i>↻</i></button></section>
+</main>
+<script src="js/animation.js"></script><script src="js/main.js"></script>
+</body></html>
