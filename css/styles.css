@@ -429,6 +429,7 @@ button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 #bouquet { transform-origin: 45% 88%; }
 .freckles { fill: #b96d32; }
 .tulip-head { fill: #ffe13e; stroke: #d39408; stroke-width: 3; filter: drop-shadow(0 3px 2px #76500077); }
+.tulip-head--small { transform-box: fill-box; transform-origin: center bottom; scale: .82; }
 .walking #body, .walking #face { animation: body-step .54s cubic-bezier(.45,0,.55,1) infinite alternate; }
 .walking #left-leg { animation: leg-step .54s cubic-bezier(.45,0,.55,1) infinite alternate; }
 .walking #right-leg { animation: leg-step .54s cubic-bezier(.45,0,.55,1) infinite alternate-reverse; }

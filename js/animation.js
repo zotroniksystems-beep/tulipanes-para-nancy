@@ -17,7 +17,7 @@
       this.n.intro.classList.add('is-hidden'); await wait(650);
       this.n.bob.className = 'bob-wrap walking';
       if (!await this.caption('Un pequeño camino...', 1500)) return;
-      await wait(450); if (!await this.caption('Para alguien muy especial... <span>♥</span>', 1650)) return;
+      await wait(450); if (!await this.caption('Con cada paso pienso en ti <span>♥</span>', 1650)) return;
       await wait(450); if (!await this.caption('Porque las flores amarillas<br>también pueden ser tulipanes <span>♥</span>', 2200)) return;
       await wait(750); if (id !== this.runId) return;
       this.n.bob.className = 'bob-wrap arrived'; await wait(650);
