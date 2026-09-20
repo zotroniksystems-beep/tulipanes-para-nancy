@@ -19,7 +19,7 @@
         <div class="leaves"><i></i><i></i><i></i><i></i><i></i></div>
         <div class="pineapple-body"><span class="window window--one"></span><span class="window window--two"></span><span class="door"></span></div>
       </div>
-      <div class="path"></div>
+      <div class="path"><i></i><i></i><i></i></div>
       <div class="flower-field flower-field--back" id="flowersBack"></div>
       <div class="flower-field flower-field--front" id="flowersFront"></div>
       <div class="seabed"></div>
@@ -33,45 +33,52 @@
 
     <div class="story-copy" id="storyCopy" aria-live="polite"></div>
 
-    <div class="bob-wrap" id="bob" aria-hidden="true">
-      <svg class="bob" viewBox="0 0 280 390" role="img" aria-label="Personaje de caricatura submarina con un ramo de tulipanes">
+    <div class="bob-wrap" id="bob">
+      <svg class="bob" viewBox="0 0 300 410" role="img" aria-label="Bob Esponja trae un ramo de tulipanes amarillos">
         <defs>
           <filter id="softShadow"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-opacity=".28"/></filter>
-          <linearGradient id="sponge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff56a"/><stop offset="1" stop-color="#e7bd22"/></linearGradient>
+          <linearGradient id="sponge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff87a"/><stop offset=".6" stop-color="#f5db32"/><stop offset="1" stop-color="#dbaa18"/></linearGradient>
+          <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4c9"/><stop offset="1" stop-color="#eab58b"/></linearGradient>
         </defs>
-        <g class="leg leg--left"><path d="M110 281v55"/><g class="shoe"><path d="M104 331v18h-28c-12 0-13 17 3 18h44v-32z"/></g></g>
-        <g class="leg leg--right"><path d="M170 281v55"/><g class="shoe"><path d="M164 331v18h28c12 0 13 17-3 18h-44v-32z"/></g></g>
+        <ellipse class="bob-shadow" cx="150" cy="391" rx="87" ry="13"/>
+        <g class="leg leg--left"><path class="limb" d="M111 300v52"/><path class="sock" d="M98 329h25v28H98z"/><path class="sock-stripe red" d="M99 335h23"/><path class="sock-stripe blue" d="M99 342h23"/><path class="shoe" d="M110 350q-3 13-17 16l-25 5q-12 5-5 16 5 7 24 5l36-6 2-27z"/><path class="shoe-shine" d="M71 377q17-7 30-6"/></g>
+        <g class="leg leg--right"><path class="limb" d="M189 300v52"/><path class="sock" d="M177 329h25v28h-25z"/><path class="sock-stripe red" d="M178 335h23"/><path class="sock-stripe blue" d="M178 342h23"/><path class="shoe" d="M190 350q3 13 17 16l25 5q12 5 5 16-5 7-24 5l-36-6-2-27z"/><path class="shoe-shine" d="M229 377q-17-7-30-6"/></g>
         <g class="body" filter="url(#softShadow)">
-          <path class="pants" d="M61 241h158v50c-25 8-133 8-158 0z"/>
-          <path class="shirt" d="M58 222h164v33H58z"/>
-          <path class="sponge" d="M49 56Q57 39 76 45q19-14 38 0 24-13 42 1 20-11 36 5 27-3 31 21l-3 161q-10 12-28 6-18 13-38 1-18 12-39 0-22 10-38-3-25 4-29-18z"/>
-          <g class="spots"><circle cx="78" cy="84" r="8"/><circle cx="197" cy="104" r="11"/><circle cx="72" cy="196" r="7"/><circle cx="203" cy="207" r="6"/></g>
-          <g class="face"><ellipse cx="107" cy="119" rx="29" ry="36"/><ellipse cx="166" cy="119" rx="29" ry="36"/><circle cx="112" cy="124" r="10"/><circle cx="161" cy="124" r="10"/><circle cx="115" cy="126" r="4"/><circle cx="158" cy="126" r="4"/><path class="nose" d="M138 130q22 13 0 21"/><path class="smile" d="M95 165q43 49 87 0"/><path class="tooth" d="M126 181v19h17v-19M143 181v19h17v-19"/></g>
-          <path class="tie" d="M140 249l-13 13 13 21 13-21z"/>
+          <path class="pants" d="M54 251q48 6 96 2t96-2v53q-20 8-42 1l-12 9-42-5-42 5-12-9q-22 7-42-1z"/>
+          <path class="belt" d="M59 274h182"/><path class="belt-loop" d="M77 266v17m46-14v18m54-18v18m46-21v17"/>
+          <path class="shirt" d="M51 224q49 8 99 4t99-4v40q-52 13-99 5-49 8-99-5z"/>
+          <path class="collar" d="M105 234l30 26-28 9m88-35-30 26 28 9"/>
+          <path class="sponge" d="M43 61q8-23 31-15 17-18 39-3 22-15 42 0 22-15 41 1 29-8 37 17 21 7 13 31 12 20-2 38 13 22-1 40 11 25-6 41 3 24-20 28-14 18-37 7-20 14-40 1-22 13-43 0-21 12-39-2-24 8-35-13-24 0-22-24-14-19-2-39-12-21 1-41-10-22 4-40-8-25 16-38z"/>
+          <g class="spots"><ellipse cx="70" cy="86" rx="10" ry="7"/><circle cx="218" cy="94" r="11"/><ellipse cx="68" cy="190" rx="8" ry="12"/><circle cx="222" cy="205" r="7"/><circle cx="91" cy="218" r="5"/><ellipse cx="198" cy="61" rx="6" ry="9"/></g>
+          <g class="face"><ellipse cx="113" cy="125" rx="35" ry="42"/><ellipse cx="177" cy="125" rx="35" ry="42"/><path class="lashes" d="M92 84l-7-11m22 7-2-14m92 18 7-11m-22 7 2-14"/><circle class="iris" cx="119" cy="130" r="12"/><circle class="iris" cx="171" cy="130" r="12"/><circle class="pupil" cx="121" cy="132" r="6"/><circle class="pupil" cx="169" cy="132" r="6"/><circle class="glint" cx="123" cy="129" r="2"/><circle class="glint" cx="171" cy="129" r="2"/><path class="nose" d="M146 126q29 14 3 28"/><path class="cheek" d="M79 166q9-8 19 0m94 0q9-8 19 0"/><path class="freckles" d="M82 159l1 0m8-3 1 0m108 3 1 0m8-3 1 0"/><path class="smile" d="M91 169q55 65 111-1"/><path class="mouth" d="M111 187q37 28 72 0-7 39-36 39-29 0-36-39"/><path class="tongue" d="M128 216q20-13 39 0"/><path class="tooth" d="M126 185v23h20v-20m1 0v20h20v-23"/></g>
+          <path class="tie-knot" d="M150 254l-14 12 14 12 14-12z"/><path class="tie" d="M150 274l-15 26 15 12 15-12z"/>
         </g>
-        <g class="arm arm--left"><path d="M61 210q-31 25-19 67"/><circle cx="43" cy="276" r="10"/></g>
-        <g class="arm arm--right"><path d="M218 210q31 25 19 67"/><circle cx="236" cy="276" r="10"/></g>
-        <g class="bouquet">
-          <path class="wrap" d="M78 238l124 0-37 98h-48z"/>
-          <g class="stems"><path d="M133 278L99 187M140 276l-9-104M147 278l20-99M151 280l45-83M125 278l-55-74"/></g>
+        <g class="arm arm--left"><path class="limb" d="M59 214q-33 25-17 70"/><path class="hand" d="M34 278q-2 15 12 17 13 0 13-14-5-14-15-15z"/><path class="finger" d="M38 274l-8-8m20 7 3-10"/></g>
+        <g class="arm arm--right"><path class="limb" d="M239 214q33 25 17 70"/><path class="hand" d="M265 278q2 15-12 17-13 0-13-14 5-14 15-15z"/><path class="finger" d="M261 274l8-8m-20 7-3-10"/></g>
+        <g class="bouquet" id="bouquetArt">
+          <path class="wrap wrap-back" d="M58 227l91-35 94 36-65 113h-57z"/>
+          <g class="stems"><path d="M144 292L73 196M146 294l-44-118m49 116-18-132m21 134 18-131m-14 131 49-115m-44 119 72-95M139 292l-59-73m82 75 60-72M150 293l1-122"/><path class="leaves" d="M121 250q-32-36-39-10 17 24 43 25m53-13q30-38 39-12-15 25-42 27m-31-25q-31-37-38-13 14 25 40 29m12-20q29-36 38-12-15 25-38 28"/></g>
           <g class="blooms">
-            <g transform="translate(68 188)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
-            <g transform="translate(96 169)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
-            <g transform="translate(127 154)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
-            <g transform="translate(160 164)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
-            <g transform="translate(190 183)"><path d="M0 16C-24-6-9-29 4-14 16-36 33-13 17 14z"/></g>
+            <g transform="translate(64 187)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(91 169)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(122 153)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(151 164)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(183 160)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(211 181)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(78 213)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(137 199)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g><g transform="translate(193 211)"><path d="M0 17C-22-6-8-31 5-15 18-37 35-12 18 15z"/></g>
           </g>
+          <path class="wrap wrap-front" d="M61 226l88 34 91-33-62 114h-57z"/><path class="ribbon" d="M122 307q-28-20-28 7 5 20 35 7m48-14q28-20 28 7-5 20-35 7m-20-12-13 29 13-8 14 8-11-29z"/>
         </g>
       </svg>
+      <button class="bouquet-button" id="bouquetButton" type="button" aria-label="Toca el ramo para descubrir la sorpresa" disabled></button>
     </div>
+    <div class="bouquet-prompt" id="bouquetPrompt" aria-hidden="true"><strong>Toca el ramo 🌷</strong><span>Tengo una sorpresa para ti...</span></div>
+    <div class="magic-particles" id="magicParticles" aria-hidden="true"></div>
 
     <section class="letter-stage" id="letterStage" aria-hidden="true">
-      <article class="letter">
-        <div class="letter-flower letter-flower--one">🌷</div><div class="letter-flower letter-flower--two">🌷</div>
-        <p>Nancy,</p>
+      <article class="letter" role="dialog" aria-modal="true" aria-labelledby="letterTitle" tabindex="-1">
+        <span class="corner-tulip corner-tulip--one" aria-hidden="true">🌷</span><span class="corner-tulip corner-tulip--two" aria-hidden="true">🌷</span>
+        <div class="letter-content">
+        <p id="letterTitle">Nancy,</p>
         <p>Gracias por hacer<br>mis días más bonitos,<br>por tu manera única de ver<br>la vida, por tu sonrisa,<br>por tu compañía y por ser<br>justo esa persona que<br>siempre alegra todo.</p>
         <p>Que este ramo de tulipanes<br>amarillos te recuerde que<br>siempre pienso en ti y que<br>mereces todas las cosas<br>bonitas del mundo.</p>
         <p class="letter-signature">Te quiero mucho,<br>mi ojos bonitos. ♥</p>
+        <button class="continue-button" id="continueButton" type="button">Continuar <span aria-hidden="true">♥</span></button>
+        </div>
       </article>
     </section>
 

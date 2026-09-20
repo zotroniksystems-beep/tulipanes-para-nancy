@@ -1,13 +1,13 @@
 # Tulipanes para Nancy 🌷
 
-Experiencia web romántica, móvil y animada. Es una página estática sin proceso de compilación ni dependencias externas, lista para GitHub Pages.
+Experiencia web romántica, móvil y animada. Es una página estática sin proceso de compilación ni dependencias externas, lista para GitHub Pages. Al terminar el paseo, toca o activa con el teclado el ramo de tulipanes para descubrir la carta; la historia solo continúa cuando se pulsa **Continuar ♥**.
 
 ## Estructura
 
 - `index.html`: escenario y SVG articulado del personaje.
 - `css/styles.css`: dirección artística, responsive, animación ambiental y estados.
-- `js/animation.js`: timeline central, entrega, carta, final y reinicio.
-- `js/main.js`: creación del campo, partículas, interacción y arranque.
+- `js/animation.js`: timeline central, pausa interactiva del ramo, carta, final y reinicio.
+- `js/main.js`: composición segura del campo, partículas, interacción y arranque.
 - `assets/`: lugares claramente separados para reemplazar personaje, flores, fondos y UI.
 
 ## Ejecutar localmente
