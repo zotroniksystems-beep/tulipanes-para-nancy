@@ -46,13 +46,23 @@
       this.n.final.setAttribute('aria-hidden','false'); this.n.final.classList.add('show'); await wait(1000);
       if (id !== this.runId) return; this.n.final.classList.add('ready'); this.n.replay.focus({preventScroll:true});
     }
+    exit() {
+      ++this.runId; this.waitingForBouquet = false;
+      this.n.bouquet.disabled = true;
+      this.n.final.classList.add('is-exiting');
+      this.n.final.setAttribute('aria-hidden','true');
+      this.n.root.classList.add('has-farewell');
+      this.n.farewell.setAttribute('aria-hidden','false');
+      requestAnimationFrame(() => this.n.farewell.classList.add('show'));
+    }
     reset() {
       ++this.runId; this.waitingForBouquet = false;
-      const {root,intro,bob,letter,final,replay,copy,start,prompt,bouquet,continue:next,particles} = this.n;
-      final.classList.remove('show','ready'); final.setAttribute('aria-hidden','true');
+      const {root,intro,bob,letter,final,replay,copy,start,prompt,bouquet,continue:next,particles,farewell} = this.n;
+      final.classList.remove('show','ready','is-exiting'); final.setAttribute('aria-hidden','true');
+      farewell.classList.remove('show'); farewell.setAttribute('aria-hidden','true');
       letter.classList.remove('show'); letter.setAttribute('aria-hidden','true'); next.disabled=false;
       prompt.classList.remove('show'); prompt.setAttribute('aria-hidden','true'); bouquet.disabled=true; particles.replaceChildren();
-      copy.classList.remove('show'); copy.textContent=''; bob.className='bob-wrap'; bob.removeAttribute('style'); root.classList.remove('is-sunset');
+      copy.classList.remove('show'); copy.textContent=''; bob.className='bob-wrap'; bob.removeAttribute('style'); root.classList.remove('is-sunset','has-farewell');
       this.n.camera.removeAttribute('style'); this.n.pineapple.removeAttribute('style');
       setTimeout(()=>{intro.classList.remove('is-hidden');start.focus({preventScroll:true});},500*speed);
     }
