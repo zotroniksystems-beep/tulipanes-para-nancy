@@ -10,7 +10,7 @@
 </head>
 <body>
 <main id="experience" class="experience" aria-live="polite">
-  <div class="ocean" aria-hidden="true"><div class="caustics"></div><div class="moon"></div><div class="particles" id="particles"></div></div>
+  <div class="ocean" aria-hidden="true"><div class="horizon-glow"></div><div class="caustics"></div><div class="particles" id="particles"></div></div>
   <div class="camera" id="horizonBack" aria-hidden="true">
     <svg class="scenery" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
       <defs>
@@ -22,6 +22,11 @@
         <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#001128" flood-opacity=".7"/></filter>
         <pattern id="diamonds" width="45" height="45" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V45M22.5 0V45" stroke="#713712" stroke-width="4" opacity=".38"/></pattern>
       </defs>
+      <g class="sea-flowers">
+        <path d="M123 153c-31-37-61-4-31 19-39 5-31 43 4 30-2 37 38 39 43 3 29 22 55-14 24-32 25-33-14-54-34-22Z"/>
+        <path d="M820 112c-20-25-42-4-22 14-28 2-22 31 3 22-2 26 27 27 31 2 21 16 40-9 17-23 18-23-10-39-25-16Z"/>
+        <path d="M425 272c-15-19-32-3-17 10-21 2-16 24 3 17-2 20 20 21 23 2 16 12 30-7 13-18 13-17-8-29-19-12Z"/>
+      </g>
       <path class="distant-ground" d="M-40 505Q160 430 350 480T720 463T1050 500V690H-40Z"/>
       <g class="city">
         <path d="M24 493v-86q0-28 20-28t20 28v86M92 493v-49q0-24 18-24t18 24v49M202 493v-105q0-31 22-31t22 31v105M710 493v-75q0-27 20-27t20 27v75M844 493v-122q0-33 23-33t23 33v122M934 493v-62q0-25 19-25t19 25v62"/>
@@ -67,7 +72,7 @@
         <path class="sponge" d="M62 80q13-34 45-20 24-25 55-4 29-21 54 2 40-10 49 27 27 12 14 44 16 24-1 48 14 30-8 53 11 35-17 50 0 35-33 39-25 20-53 5-28 17-56-3-39 5-43-32-30-15-13-47-16-27 3-50-14-28 8-49-9-33 11-63Z"/>
         <g class="pores"><ellipse cx="92" cy="100" rx="12" ry="8"/><circle cx="239" cy="111" r="12"/><ellipse cx="85" cy="248" rx="9" ry="14"/><circle cx="234" cy="271" r="8"/><circle cx="113" cy="292" r="6"/></g>
         <g class="face"><ellipse class="eye" cx="139" cy="151" rx="43" ry="50" transform="rotate(-5 139 151)"/><ellipse class="eye" cx="208" cy="143" rx="38" ry="47" transform="rotate(8 208 143)"/><circle class="iris" cx="151" cy="157" r="14"/><circle class="iris" cx="211" cy="149" r="13"/><circle class="pupil" cx="154" cy="159" r="7"/><circle class="pupil" cx="214" cy="151" r="7"/><path class="lashes" d="M110 107l-8-15m25 10-2-18m106 18 9-15m-25 11 3-17"/><path class="nose" d="M178 150q49 5 35 33-12 16-38 3"/><path class="cheeks" d="M103 197q12-10 25 2m92-6q13-8 25 3"/><path class="smile" d="M112 201q56 67 126-8"/><path class="mouth" d="M132 220q44 29 83-3-9 50-43 51-32 1-40-48Z"/><path class="tongue" d="M151 257q22-17 43-2"/><path class="teeth" d="M145 218v27h23v-24m1 0v24h23v-28"/></g>
-        <path class="collar" d="M105 340l35 32-34 10m105-48-34 36 32 8"/><path class="tie" d="M159 362l18-2 13 17-15 16-18-15Zm8 29 17-1 6 28-19 16-14-17Z"/>
+        <g class="belt"><path d="M69 382q88 18 177-4"/><path d="M91 382v18m42-12v18m53-20v18m39-22v17"/></g><path class="collar" d="M105 340l35 32-34 10m105-48-34 36 32 8"/><path class="tie" d="M159 362l18-2 13 17-15 16-18-15Zm8 29 17-1 6 28-19 16-14-17Z"/>
       </g>
       <g class="arm arm--free"><path class="limb" d="M68 327q-48 11-57 63"/><path class="hand" d="M8 380q-13 8-4 20 7 8 16 0 0 15 11 13 10-3 4-15 12 7 17-2 3-11-14-17-17-7-30 1Z"/><path class="fingers" d="M12 383l-10-7m23 5 1-14m9 18 11-9"/></g>
       <g class="arm arm--holding"><path class="limb" d="M245 328q42 23 42 73"/><path class="hand" d="M272 391q-12 13-2 26 12 12 26-2l3-21q-13-12-27-3Z"/></g>
@@ -79,7 +84,7 @@
     </svg>
     <button class="bouquet-button" id="bouquetButton" type="button" aria-label="Toca el ramo para descubrir la sorpresa" disabled></button>
   </div>
-  <div class="bouquet-prompt" id="bouquetPrompt" aria-hidden="true"><strong>Toca el ramo 🌷</strong><span>Tengo una sorpresa para ti...</span></div>
+  <div class="bouquet-prompt" id="bouquetPrompt" aria-hidden="true"><strong>TOCA EL RAMO ♥</strong><span>Tengo una sorpresa para ti...</span></div>
   <div class="magic-particles" id="magicParticles" aria-hidden="true"></div>
 
   <section class="letter-stage" id="letterStage" aria-hidden="true"><article class="letter" role="dialog" aria-modal="true" aria-labelledby="letterTitle" tabindex="-1"><div class="paper-fold"></div><span class="corner-tulip one">🌷</span><span class="corner-tulip two">🌷</span><div class="letter-content"><p id="letterTitle">Nancy,</p><p>Gracias por hacer<br>mis días más bonitos,<br>por tu manera única de ver<br>la vida, por tu sonrisa,<br>por tu compañía y por ser<br>justo esa persona que<br>siempre alegra todo.</p><p>Que este ramo de tulipanes<br>amarillos te recuerde que<br>siempre pienso en ti y que<br>mereces todas las cosas<br>bonitas del mundo.</p><p class="letter-signature">Te quiero mucho,<br>mi ojos bonitos. ♥</p><button class="continue-button" id="continueButton" type="button">Continuar ♥</button></div></article></section>
