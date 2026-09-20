@@ -8,7 +8,12 @@
     [75, 1, 53, -7], [84, 13, 36, 4], [91, 5, 44, -5], [96, 0, 50, 7],
     [6, 18, 34, 3], [14, 22, 31, -5], [23, 17, 38, 6], [33, 25, 29, -7],
     [43, 20, 36, 4], [54, 24, 30, -3], [64, 19, 37, 7], [74, 27, 28, -6],
-    [83, 21, 34, 5], [90, 26, 29, -4], [98, 18, 38, 6]
+    [83, 21, 34, 5], [90, 26, 29, -4], [98, 18, 38, 6],
+    [3, 30, 32, -6], [9, 34, 27, 5], [16, 29, 35, -3], [22, 37, 25, 7],
+    [29, 31, 33, -5], [36, 39, 24, 4], [42, 33, 31, -7], [49, 41, 23, 6],
+    [56, 32, 34, -4], [63, 38, 26, 5], [70, 30, 36, -6], [77, 40, 24, 7],
+    [84, 34, 31, -3], [89, 42, 23, 5], [94, 31, 34, -5], [99, 38, 26, 6],
+    [52, 46, 22, -2]
   ];
   document.querySelectorAll('.foreground-field').forEach((garden, gardenIndex) => {
     const flowers = document.createDocumentFragment();
@@ -17,13 +22,17 @@
       tulip.className = 'garden-tulip';
       const mirroredX = gardenIndex ? 100 - x : x;
       const offset = gardenIndex ? ((index % 3) - 1) * 2 : 0;
-      tulip.style.cssText = `--x:${mirroredX}%;--y:${y}%;--w:${width}px;--r:${rotation + offset}deg`;
+      tulip.style.cssText = `--x:${mirroredX}%;--y:${y}%;--w:${Math.round(width * 1.22)}px;--r:${rotation + offset}deg`;
       flowers.append(tulip);
     });
     garden.append(flowers);
   });
 
   const svgNamespace = 'http://www.w3.org/2000/svg';
+  document.querySelectorAll('.field use').forEach(tulip => {
+    const width = Number(tulip.getAttribute('width')) || 24;
+    tulip.setAttribute('height', Math.round(width * 2.5));
+  });
   const populateSvgGarden = (field, amount, layer, offset = 0) => {
     const fragment = document.createDocumentFragment();
     for (let index = 0; index < amount; index += 1) {
@@ -37,6 +46,7 @@
       tulip.setAttribute('x', x);
       tulip.setAttribute('y', y);
       tulip.setAttribute('width', width);
+      tulip.setAttribute('height', Math.round(width * 2.5));
       tulip.setAttribute('transform', `rotate(${(index % 9) - 4} ${x + width / 2} ${y + 95})`);
       fragment.append(tulip);
     }

@@ -70,5 +70,6 @@ assert not missing_compatibility, f"missing compatibility rules: {missing_compat
 assert css.count(":root{") == 1 and css.count(".experience{") == 1, "multiple complete CSS implementations detected"
 assert "populateSvgGarden(backField, 48" in main_js, "background garden population missing"
 assert "populateSvgGarden(midFields[0], 16" in main_js and "populateSvgGarden(midFields[1], 16" in main_js, "midground garden population missing"
-assert len(re.findall(r"\[[\d.-]+, [\d.-]+, [\d.-]+, -?[\d.-]+\]", main_js.split("const foregroundLayout = [", 1)[1].split("];", 1)[0])) == 23, "foreground layout must define 23 tulips per side"
-print("Visual integrity audit passed: compatible CSS, connected rig, 12-flower bouquet, and populated 72/56/46 garden layers.")
+assert len(re.findall(r"\[[\d.-]+, [\d.-]+, [\d.-]+, -?[\d.-]+\]", main_js.split("const foregroundLayout = [", 1)[1].split("];", 1)[0])) == 40, "foreground layout must define 40 tulips per side"
+assert "setAttribute('height', Math.round(width * 2.5))" in main_js, "SVG garden tulips need an explicit height"
+print("Visual integrity audit passed: compatible CSS, connected rig, 12-flower bouquet, and populated 72/56/80 garden layers.")
