@@ -59,6 +59,14 @@ required_rules = {
 }
 missing = sorted(rule for rule in required_rules if rule not in css)
 assert not missing, f"missing CSS rules: {missing}"
+compatibility_rules = {
+    ".ocean", ".camera", ".scenery", ".floor", ".road", ".house",
+    ".pine-body", ".pine-texture", ".windows", ".door", ".flower-field",
+    ".flower-field--back", ".flower-field--mid", ".flower-field--front",
+    ".bob-wrap", ".sponge", ".pants", ".limb", ".tulip-head",
+}
+missing_compatibility = sorted(rule for rule in compatibility_rules if rule not in css)
+assert not missing_compatibility, f"missing compatibility rules: {missing_compatibility}"
 assert css.count(":root{") == 1 and css.count(".experience{") == 1, "multiple complete CSS implementations detected"
 assert "populateSvgGarden(backField, 48" in main_js, "background garden population missing"
 assert "populateSvgGarden(midFields[0], 16" in main_js and "populateSvgGarden(midFields[1], 16" in main_js, "midground garden population missing"
