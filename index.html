@@ -62,24 +62,50 @@
   <div class="story-copy" id="storyCopy" aria-live="polite"></div>
 
   <div class="bob-wrap" id="bob">
-    <svg class="bob" viewBox="0 0 360 560" role="img" aria-label="Bob Esponja camina de cuerpo completo con un ramo de tulipanes en una mano">
-      <defs><linearGradient id="sponge" x2="1" y2="1"><stop stop-color="#fff681"/><stop offset=".55" stop-color="#f7d72f"/><stop offset="1" stop-color="#cf9b13"/></linearGradient><linearGradient id="wrap" x2="1" y2="1"><stop stop-color="#fff0bd"/><stop offset="1" stop-color="#d89368"/></linearGradient><filter id="bobShadow"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-opacity=".35"/></filter></defs>
-      <ellipse class="bob-shadow" cx="178" cy="535" rx="105" ry="15"/>
-      <g class="leg leg--back"><path class="limb" d="M196 411q12 47-2 79"/><path class="sock" d="M181 469l30 3-3 31-31-4Z"/><path class="stripes" d="M181 479l29 3m-30 8 29 3"/><g class="shoe"><path d="M194 497q20 3 34 18 22 20-1 27-23 5-61-10l11-35Z"/><path d="M184 515q22 4 37 17"/></g></g>
-      <g class="leg leg--front"><path class="limb" d="M119 406q-16 43-8 82"/><path class="sock" d="M96 466l31-1 2 33-32 1Z"/><path class="stripes" d="M98 476l29-1m-29 10 30-1"/><g class="shoe"><path d="M112 493q-14 8-35 11-31 4-28 25 7 20 63 7l18-8-2-34Z"/><path d="M61 520q24-8 45-6"/></g></g>
-      <g class="body" filter="url(#bobShadow)">
-        <path class="pants" d="M63 359q75 17 171-5l18 59q-34 24-72 7-41 15-84-1l-32 5q-11-31-1-65Z"/><path class="shirt" d="M55 324q93 20 199-4l-2 48q-98 32-190 2Z"/>
-        <path class="sponge" d="M62 80q13-34 45-20 24-25 55-4 29-21 54 2 40-10 49 27 27 12 14 44 16 24-1 48 14 30-8 53 11 35-17 50 0 35-33 39-25 20-53 5-28 17-56-3-39 5-43-32-30-15-13-47-16-27 3-50-14-28 8-49-9-33 11-63Z"/>
-        <g class="pores"><ellipse cx="92" cy="100" rx="12" ry="8"/><circle cx="239" cy="111" r="12"/><ellipse cx="85" cy="248" rx="9" ry="14"/><circle cx="234" cy="271" r="8"/><circle cx="113" cy="292" r="6"/></g>
-        <g class="face"><ellipse class="eye" cx="139" cy="151" rx="43" ry="50" transform="rotate(-5 139 151)"/><ellipse class="eye" cx="208" cy="143" rx="38" ry="47" transform="rotate(8 208 143)"/><circle class="iris" cx="151" cy="157" r="14"/><circle class="iris" cx="211" cy="149" r="13"/><circle class="pupil" cx="154" cy="159" r="7"/><circle class="pupil" cx="214" cy="151" r="7"/><path class="lashes" d="M110 107l-8-15m25 10-2-18m106 18 9-15m-25 11 3-17"/><path class="nose" d="M178 150q49 5 35 33-12 16-38 3"/><path class="cheeks" d="M103 197q12-10 25 2m92-6q13-8 25 3"/><path class="smile" d="M112 201q56 67 126-8"/><path class="mouth" d="M132 220q44 29 83-3-9 50-43 51-32 1-40-48Z"/><path class="tongue" d="M151 257q22-17 43-2"/><path class="teeth" d="M145 218v27h23v-24m1 0v24h23v-28"/></g>
-        <g class="belt"><path d="M69 382q88 18 177-4"/><path d="M91 382v18m42-12v18m53-20v18m39-22v17"/></g><path class="collar" d="M105 340l35 32-34 10m105-48-34 36 32 8"/><path class="tie" d="M159 362l18-2 13 17-15 16-18-15Zm8 29 17-1 6 28-19 16-14-17Z"/>
+    <svg class="bob" viewBox="0 0 400 620" role="img" aria-label="Bob Esponja camina de cuerpo completo con un ramo de tulipanes en una mano">
+      <defs>
+        <linearGradient id="sponge" x2="1" y2="1"><stop stop-color="#fff56d"/><stop offset=".58" stop-color="#f5d51e"/><stop offset="1" stop-color="#d5a40b"/></linearGradient>
+        <linearGradient id="wrap" x2="1" y2="1"><stop stop-color="#fff1ce"/><stop offset="1" stop-color="#d89472"/></linearGradient>
+        <filter id="bobShadow"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".32"/></filter>
+      </defs>
+      <ellipse class="bob-shadow" cx="188" cy="595" rx="108" ry="14"/>
+      <!-- Long articulated legs are deliberately separate from the square pants. -->
+      <g class="leg leg--back">
+        <path class="limb" d="M220 451q1 49-2 82"/><path class="sock" d="M204 516h29l1 33h-31Z"/><path class="sock-stripe blue" d="M205 523h27"/><path class="sock-stripe red" d="M204 531h29"/>
+        <g class="shoe"><path d="M218 543q16-2 25 10 31 6 30 24-3 18-39 13l-29-15 1-29Z"/><path d="M231 568q18 9 32 6"/></g>
       </g>
-      <g class="arm arm--free"><path class="limb" d="M68 327q-48 11-57 63"/><path class="hand" d="M8 380q-13 8-4 20 7 8 16 0 0 15 11 13 10-3 4-15 12 7 17-2 3-11-14-17-17-7-30 1Z"/><path class="fingers" d="M12 383l-10-7m23 5 1-14m9 18 11-9"/></g>
-      <g class="arm arm--holding"><path class="limb" d="M245 328q42 23 42 73"/><path class="hand" d="M272 391q-12 13-2 26 12 12 26-2l3-21q-13-12-27-3Z"/></g>
-      <g class="bouquet" id="bouquetArt">
-        <g class="stems"><path d="M285 412l-57-118m58 118-30-139m35 139 6-148m-3 148 42-133m-37 136 68-111m-73 106-4-125m10 126 31-142m-36 145 62-74m-69 75-61-100"/><path class="leaf" d="M276 363q-42-47-53-16 19 35 57 37m20-39q44-50 55-17-20 36-58 39"/></g>
-        <g class="blooms"><g transform="translate(214 287) rotate(-20)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(245 261) rotate(-12)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(286 250)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(326 267) rotate(13)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(349 295) rotate(21)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(234 312) rotate(-14)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(275 298)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(314 309) rotate(10)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g><g transform="translate(342 330) rotate(18)"><path d="M0 22C-23-5-8-34 7-17 23-40 39-10 20 21Z"/></g></g>
-        <path class="paper back" d="M218 331l74 56 78-57-44 137-55-2Z"/><path class="paper front" d="M222 350l70 38 75-37-43 116-54-2Z"/><path class="ribbon" d="M269 421q-34-22-35 10 9 23 42 8m48-18q36-20 34 12-11 21-42 6m-22-15-15 38 17-9 17 11-9-39Z"/>
+      <g class="leg leg--front">
+        <path class="limb" d="M124 450q-1 48 1 83"/><path class="sock" d="M109 516h30l1 33h-32Z"/><path class="sock-stripe blue" d="M110 523h28"/><path class="sock-stripe red" d="M109 531h30"/>
+        <g class="shoe"><path d="M125 542q-17-1-25 12-33 5-32 23 2 19 40 13l30-15-1-30Z"/><path d="M109 568q-18 9-32 6"/></g>
+      </g>
+      <!-- Newly constructed tall, mildly irregular rectangular sponge and clothing. -->
+      <g class="body" filter="url(#bobShadow)">
+        <path class="sponge" d="M71 55Q82 39 99 48q18-13 37-2 21-12 42 0 22-11 42 1 24-10 42 5 24-6 33 13l-3 48 4 46-4 47 4 45-5 51 3 43-15 15H91l-17-14 3-45-5-48 4-47-5-45 5-47Z"/>
+        <g class="pores"><ellipse cx="103" cy="86" rx="15" ry="11"/><ellipse cx="263" cy="84" rx="11" ry="15"/><ellipse cx="94" cy="202" rx="11" ry="17"/><ellipse cx="268" cy="226" rx="14" ry="9"/><ellipse cx="109" cy="302" rx="8" ry="11"/><ellipse cx="265" cy="321" rx="7" ry="10"/></g>
+        <g class="face">
+          <path class="lashes" d="M121 105l-8-18m27 14-2-21m19 20 4-20m48 21-3-20m21 23 7-19m10 26 13-15"/>
+          <ellipse class="eye" cx="153" cy="145" rx="43" ry="49"/><ellipse class="eye" cx="224" cy="145" rx="43" ry="49"/>
+          <circle class="iris" cx="159" cy="150" r="15"/><circle class="iris" cx="230" cy="150" r="15"/><circle class="pupil" cx="161" cy="151" r="8"/><circle class="pupil" cx="232" cy="151" r="8"/><circle class="eye-shine" cx="157" cy="146" r="3.5"/><circle class="eye-shine" cx="228" cy="146" r="3.5"/>
+          <path class="nose" d="M190 160q55 2 61 21 2 15-20 17-20 1-34-8"/>
+          <path class="cheeks" d="M104 205q12-12 27 0m117-1q15-11 28 2"/><circle class="freckle" cx="112" cy="212" r="2"/><circle class="freckle" cx="121" cy="215" r="2"/><circle class="freckle" cx="260" cy="212" r="2"/><circle class="freckle" cx="269" cy="209" r="2"/>
+          <path class="smile" d="M112 206q76 90 151-2"/><path class="mouth" d="M126 220q62 38 124-4-7 73-60 76-52-2-64-72Z"/><path class="tongue" d="M156 280q31-24 65-2"/>
+          <path class="tooth" d="M163 225v31h28v-28Z"/><path class="tooth" d="M192 228v28h28v-31Z"/>
+        </g>
+        <path class="shirt" d="M75 345H293v54H75Z"/><path class="pants" d="M75 397H293v62H75Z"/>
+        <path class="collar" d="M113 346l48 1-25 34-38-27Zm141 0-47 1 24 34 39-27Z"/><path class="tie" d="M176 353h18l12 18-21 18-20-18Zm3 33h14l9 42-17 19-17-19Z"/>
+        <g class="belt"><path d="M82 418H286"/><path d="M99 409v22m46-22v22m82-22v22m43-22v22"/></g><path class="pants-seam" d="M184 438v20"/>
+      </g>
+      <!-- The left arm stays free and swings opposite the legs. -->
+      <g class="arm arm--free"><path class="limb" d="M77 354q-42 25-45 75"/><path class="hand" d="M22 420q-13 10-5 24 8 10 18-3 0 18 12 14 10-4 2-18 14 9 19-2 2-12-18-19-15-6-28 4Z"/><path class="fingers" d="M28 423l-11-8m26 6 2-16m10 20 12-9"/></g>
+      <!-- The right hand, stems, wrapping and flowers share one articulated group. -->
+      <g class="gift-arm">
+        <g class="arm arm--holding"><path class="limb" d="M291 351q38 22 41 68"/></g>
+        <g class="bouquet" id="bouquetArt">
+          <g class="stems"><path d="M329 423l-62-134m63 134-33-154m38 153 5-163m-3 164 45-147m-41 143 35-119m-41 120-11-137m17 135 24-151m-30 153 65-91m-70 91-58-108"/><path class="leaf" d="M319 374q-49-52-61-17 22 39 65 41m19-43q47-53 59-17-21 40-63 43"/></g>
+          <g class="blooms"><g transform="translate(254 278) rotate(-18)"><path d="M0 23C-22-5-8-34 7-17 23-40 39-10 20 22Z"/></g><g transform="translate(286 255) rotate(-10)"><path d="M0 23C-22-5-8-34 7-17 23-40 39-10 20 22Z"/></g><g transform="translate(329 244)"><path d="M0 23C-22-5-8-34 7-17 23-40 39-10 20 22Z"/></g><g transform="translate(370 264) rotate(14)"><path d="M0 23C-22-5-8-34 7-17 23-40 39-10 20 22Z"/></g><g transform="translate(389 299) rotate(20)"><path d="M0 23C-22-5-8-34 7-17 23-40 39-10 20 22Z"/></g><g transform="translate(278 307) rotate(-12)"><path d="M0 23C-22-5-8-34 7-17 23-40 39-10 20 22Z"/></g><g transform="translate(322 292)"><path d="M0 23C-22-5-8-34 7-17 23-40 39-10 20 22Z"/></g><g transform="translate(363 309) rotate(11)"><path d="M0 23C-22-5-8-34 7-17 23-40 39-10 20 22Z"/></g></g>
+          <path class="paper back" d="M259 341l78 57 72-58-40 139-61-2Z"/><path class="paper front" d="M264 359l72 39 69-38-39 119-60-2Z"/><path class="ribbon" d="M305 434q-35-23-37 10 10 24 43 8m55-18q37-21 35 13-12 21-44 6m-21-15-16 39 18-9 17 12-9-41Z"/>
+        </g>
+        <path class="hand holding-hand" d="M318 405q-15 12-6 28 10 14 29 2l6-22q-12-16-29-8Z"/><path class="grip-lines" d="M318 417q11 7 23 2m-23 8q10 7 21 2"/>
       </g>
     </svg>
     <button class="bouquet-button" id="bouquetButton" type="button" aria-label="Toca el ramo para descubrir la sorpresa" disabled></button>
@@ -88,7 +114,17 @@
   <div class="magic-particles" id="magicParticles" aria-hidden="true"></div>
 
   <section class="letter-stage" id="letterStage" aria-hidden="true"><article class="letter" role="dialog" aria-modal="true" aria-labelledby="letterTitle" tabindex="-1"><div class="paper-fold"></div><span class="corner-tulip one">🌷</span><span class="corner-tulip two">🌷</span><div class="letter-content"><p id="letterTitle">Nancy,</p><p>Gracias por hacer<br>mis días más bonitos,<br>por tu manera única de ver<br>la vida, por tu sonrisa,<br>por tu compañía y por ser<br>justo esa persona que<br>siempre alegra todo.</p><p>Que este ramo de tulipanes<br>amarillos te recuerde que<br>siempre pienso en ti y que<br>mereces todas las cosas<br>bonitas del mundo.</p><p class="letter-signature">Te quiero mucho,<br>mi ojos bonitos. ♥</p><button class="continue-button" id="continueButton" type="button">Continuar ♥</button></div></article></section>
-  <section class="final overlay" id="final" aria-hidden="true"><button class="primary-button" id="replayButton" type="button">Volver a ver <i>↻</i></button></section>
+  <section class="final overlay" id="final" aria-hidden="true">
+    <div class="ending-menu" id="endingMenu" role="group" aria-labelledby="endingTitle">
+      <span class="ending-flower" aria-hidden="true">🌷</span>
+      <p id="endingTitle">¿Qué quieres hacer? <b>♥</b></p>
+      <div class="ending-actions">
+        <button class="ending-button ending-button--primary" id="replayButton" type="button">Volver a ver <i aria-hidden="true">↻</i></button>
+        <button class="ending-button" id="exitButton" type="button">Salir</button>
+      </div>
+    </div>
+    <p class="farewell" id="farewell">Te quiero mucho,<br>ten un bonito día,<br>te mando un beso<br>hasta donde lo ocupes. ♥</p>
+  </section>
 </main>
 <script src="js/animation.js"></script><script src="js/main.js"></script>
 </body></html>
