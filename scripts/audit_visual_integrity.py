@@ -72,4 +72,8 @@ assert "populateSvgGarden(backField, 48" in main_js, "background garden populati
 assert "populateSvgGarden(midFields[0], 16" in main_js and "populateSvgGarden(midFields[1], 16" in main_js, "midground garden population missing"
 assert len(re.findall(r"\[[\d.-]+, [\d.-]+, [\d.-]+, -?[\d.-]+\]", main_js.split("const foregroundLayout = [", 1)[1].split("];", 1)[0])) == 40, "foreground layout must define 40 tulips per side"
 assert "setAttribute('height', Math.round(width * 2.5))" in main_js, "SVG garden tulips need an explicit height"
+field_markup = html.split('<g class="field field-back">', 1)[1].split('</svg>', 1)[0]
+field_x_positions = [int(value) for value in re.findall(r'<use href="#tulip" x="(\d+)"', field_markup)]
+assert not [x for x in field_x_positions if 680 <= x <= 970], "garden tulip overlaps the pineapple house lane"
+assert "side ? 985 +" in main_js, "generated right garden must remain clear of the pineapple house"
 print("Visual integrity audit passed: compatible CSS, connected rig, 12-flower bouquet, and populated 72/56/80 garden layers.")

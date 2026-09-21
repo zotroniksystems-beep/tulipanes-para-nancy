@@ -39,7 +39,7 @@
       const tulip = document.createElementNS(svgNamespace, 'use');
       const side = index % 2;
       const lane = Math.floor(index / 2);
-      const x = side ? 885 + ((lane * 47 + offset) % 290) : 8 + ((lane * 53 + offset) % 515);
+      const x = side ? 985 + ((lane * 47 + offset) % 195) : 8 + ((lane * 53 + offset) % 515);
       const y = layer === 'back' ? 438 + ((index * 17) % 34) : 505 + ((index * 23) % 82);
       const width = layer === 'back' ? 20 + (index % 7) : 40 + (index % 13);
       tulip.setAttribute('href', '#tulip');
